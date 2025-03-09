@@ -32,7 +32,27 @@ This tutorial outlines the prerequisites and installation of the open-source hel
 Step 1
 </p>
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+1. Create an Azure VM
+VM Name: osticket-vm
+Username: labuser
+Password: osTicketPassword1!
+Choose Windows 10 with 4 vCPUs.
+2. Log into the VM
+Use Remote Desktop to log in to the VM.
+3. Download and Extract osTicket Installation Files
+Download osTicket-Installation-Files.zip and unzip it on the desktop. The folder should be named osTicket-Installation-Files.
+4. Install IIS with CGI Support
+In Control Panel, enable IIS and the CGI feature under Application Development Features.
+5. Install Dependencies
+PHP Manager for IIS: Install from the osTicket-Installation-Files folder.
+Rewrite Module: Install from the osTicket-Installation-Files folder.
+PHP 7.3.8: Create a C:\PHP directory and unzip the PHP files there.
+Visual C++ Redistributable: Install VC_redist.x86.exe from the osTicket-Installation-Files folder.
+These steps will set up the necessary software on your VM to proceed with osTicket installation.
+
+
+
+
 </p>
 <br />
 
