@@ -22,36 +22,20 @@ This tutorial outlines the prerequisites and installation of the open-source hel
 - Remote Desktop
 - Internet Information Services (IIS)
 
-<h2>Environments Used </h2>
+
 <h2>Operating Systems Used </h2>
 
 - Windows 10</b> (21H2)
 
-@@ -27,11 +32,24 @@ This tutorial outlines the prerequisites and installation of the open-source hel
+<h2> Installation Steps </h2>
 
 <p>
+<h2> Step 1 </h2>
 <img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-Step 1
 </p>
 <p>
-1. Create an Azure VM
-VM Name: osticket-vm
-Username: labuser
-Password: osTicketPassword1!
-Choose Windows 10 with 4 vCPUs.
-2. Log into the VM
-Use Remote Desktop to log in to the VM.
-3. Download and Extract osTicket Installation Files
-Download osTicket-Installation-Files.zip and unzip it on the desktop. The folder should be named osTicket-Installation-Files.
-4. Install IIS with CGI Support
-In Control Panel, enable IIS and the CGI feature under Application Development Features.
-5. Install Dependencies
-PHP Manager for IIS: Install from the osTicket-Installation-Files folder.
-Rewrite Module: Install from the osTicket-Installation-Files folder.
-PHP 7.3.8: Create a C:\PHP directory and unzip the PHP files there.
-Visual C++ Redistributable: Install VC_redist.x86.exe from the osTicket-Installation-Files folder.
-These steps will set up the necessary software on your VM to proceed with osTicket installation.
-
+To set up osTicket on a Windows 10 Azure Virtual Machine, start by creating a VM with 4 vCPUs named "osticket-vm". Set the username as "labuser" and the password as "osTicketPassword1!". Log into the VM using Remote Desktop. Next, download the "osTicket-Installation-Files.zip" and extract it to the desktop, naming the folder "osTicket-Installation-Files".
+Install and enable IIS with CGI support by navigating to the "World Wide Web Services" and selecting "Application Development Features" and enabling CGI.
 
 
 
@@ -59,18 +43,37 @@ These steps will set up the necessary software on your VM to proceed with osTick
 <br />
 
 <p>
+<h2> Step 2 </h2>
 <img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-Step 1
 </p>
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+From the "osTicket-Installation-Files" folder, install PHP Manager for IIS (PHPManagerForIIS_V1.5.0.msi) and the Rewrite Module (rewrite_amd64_en-US.msi). Create a new directory at "C:\PHP", unzip PHP 7.3.8 (php-7.3.8-nts-Win32-VC15-x86.zip) into this directory, and install the Visual C++ Redistributable (VC_redist.x86.exe). Then, install MySQL 5.5.62 (mysql-5.5.62-win32.msi), choose the typical setup, and configure MySQL with the username "root" and the password "root".
+Open IIS as an administrator, and register PHP by pointing PHP Manager to "C:\PHP\php-cgi.exe". Reload IIS by stopping and starting the server. 
 </p>
 <br />
 
 <p>
+<h2> Step 3 </h2>
 <img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+Install osTicket v1.15.8 by extracting "osTicket-v1.15.8.zip" and copying the "upload" folder into "C:\inetpub\wwwroot". Rename the folder to "osTicket". Reload IIS again by stopping and starting the server. To access the site, go to "sites" -> "Default" -> "osTicket" and click "Browse *:80".
+Some PHP extensions may not be enabled. To enable them, go back to IIS, navigate to "sites" -> "Default" -> "osTicket", and open PHP Manager. Enable the extensions: php_imap.dll, php_intl.dll, and php_opcache.dll. Refresh the site in the browser to see the changes. Rename the file "ost-sampleconfig.php" to "ost-config.php" in "C:\inetpub\wwwroot\osTicket\include", then assign permissions to "ost-config.php" by disabling inheritance, removing all permissions, and granting "Everyone" full control.
+</p>
+<br />
+<h2> Step 4 </h2>
+<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+Continue the osTicket setup in the browser by entering the helpdesk name and default email. Install HeidiSQL from the "osTicket-Installation-Files" folder, open it, create a new session with the credentials "root/root", and connect to the session. Create a database named "osTicket". Finish the osTicket installation in the browser by entering "osTicket" as the MySQL database, "root" as the username, and "root" as the password, then click "Install Now!".
+
+Final Setup: Once installation is successful, browse to the Help Desk Login Page: http://localhost/osTicket/scp/login.php
+
+End Users osTicket URL: http://localhost/osTicket/
+
+This completes the installation and setup of osTicket on your VM.
+
+
+<p>
+
 </p>
 <br />
