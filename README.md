@@ -59,8 +59,9 @@ Open IIS as an administrator, and register PHP by pointing PHP Manager to "C:\PH
 
 <p>
 <h2> Step 3 </h2>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-</p>
+
+![Image](https://github.com/user-attachments/assets/c79c4d64-596e-4490-b0aa-74c3181e13e0)
+
 <p>
 Install osTicket v1.15.8 by extracting "osTicket-v1.15.8.zip" and copying the "upload" folder into "C:\inetpub\wwwroot". Rename the folder to "osTicket". Reload IIS again by stopping and starting the server. To access the site, go to "sites" -> "Default" -> "osTicket" and click "Browse *:80".
 Some PHP extensions may not be enabled. To enable them, go back to IIS, navigate to "sites" -> "Default" -> "osTicket", and open PHP Manager. Enable the extensions: php_imap.dll, php_intl.dll, and php_opcache.dll. Refresh the site in the browser to see the changes. Rename the file "ost-sampleconfig.php" to "ost-config.php" in "C:\inetpub\wwwroot\osTicket\include", then assign permissions to "ost-config.php" by disabling inheritance, removing all permissions, and granting "Everyone" full control.
