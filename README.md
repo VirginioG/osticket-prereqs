@@ -48,8 +48,9 @@ Install and enable IIS with CGI support by navigating to the "World Wide Web Ser
 
 <p>
 <h2> Step 2 </h2>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-</p>
+
+![Image](https://github.com/user-attachments/assets/17fa5c22-7594-42cb-aeaf-9866df4e2b0f)
+
 <p>
 From the "osTicket-Installation-Files" folder, install PHP Manager for IIS (PHPManagerForIIS_V1.5.0.msi) and the Rewrite Module (rewrite_amd64_en-US.msi). Create a new directory at "C:\PHP", unzip PHP 7.3.8 (php-7.3.8-nts-Win32-VC15-x86.zip) into this directory, and install the Visual C++ Redistributable (VC_redist.x86.exe). Then, install MySQL 5.5.62 (mysql-5.5.62-win32.msi), choose the typical setup, and configure MySQL with the username "root" and the password "root".
 Open IIS as an administrator, and register PHP by pointing PHP Manager to "C:\PHP\php-cgi.exe". Reload IIS by stopping and starting the server. 
