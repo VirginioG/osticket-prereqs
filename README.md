@@ -14,7 +14,6 @@ This tutorial covers the prerequisites and installation process for the open-sou
 
 <h2>Environments and Technologies Used</h2>
 
-- Microsoft Azure Virtual Machine
 - Microsoft Azure (Virtual Machines/Compute)
 - Remote Desktop
 - Internet Information Services (IIS)
