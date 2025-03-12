@@ -28,7 +28,7 @@ This tutorial covers the prerequisites and installation process for the open-sou
 <p>
 <h2> Step 1 </h2>
 
-  ![Image](https://github.com/user-attachments/assets/c8c1298f-eae5-4317-8e14-9065b52db231)
+![Image](https://github.com/user-attachments/assets/c8c1298f-eae5-4317-8e14-9065b52db231)
 
 <p>
 To set up osTicket on a Windows 10 Azure Virtual Machine, start by creating a VM with 4 vCPUs named "osticket-vm". Set the username as "labuser" and the password as "osTicketPassword1!". Log into the VM using Remote Desktop. Next, download the "osTicket-Installation-Files.zip" and extract it to the desktop, naming the folder "osTicket-Installation-Files".
