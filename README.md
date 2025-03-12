@@ -68,8 +68,9 @@ Some PHP extensions may not be enabled. To enable them, go back to IIS, navigate
 </p>
 <br />
 <h2> Step 4 </h2>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-</p>
+
+![Image](https://github.com/user-attachments/assets/22a55a06-1a0b-47f2-beb6-128153f8a818)
+
 Continue the osTicket setup in the browser by entering the helpdesk name and default email. Install HeidiSQL from the "osTicket-Installation-Files" folder, open it, create a new session with the credentials "root/root", and connect to the session. Create a database named "osTicket". Finish the osTicket installation in the browser by entering "osTicket" as the MySQL database, "root" as the username, and "root" as the password, then click "Install Now!".
 
 Final Setup: Once installation is successful, browse to the Help Desk Login Page: http://localhost/osTicket/scp/login.php
